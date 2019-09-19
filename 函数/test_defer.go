@@ -10,6 +10,3 @@ func test(x int) {
 	}()
 	defer println("c")
 }
-func main() {
-	test(0)
-}
