@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func sliceTest() {
 	var number1 = []int{1, 1, 1, 1}
 	fmt.Printf("%d\n", number1[0])
 	var numbers3 = [5]int{1, 2, 3, 4, 5}

@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func arrayTest() {
 	var array1 = [...]int{1, 2, 3}
 	fmt.Printf("%d\n", array1[2])
 	//[1,2,3]

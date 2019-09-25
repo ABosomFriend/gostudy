@@ -3,21 +3,22 @@ package main
 import (
 	"fmt"
 )
+
 type Person struct {
-    Name    string
+	Name    string
 	Gender  string
 	Age     uint8
-	Address    string
+	Address string
 }
 
 //这里我们可以定义一个结构体的方法
-func (person * Person) Move(Address string) string {
+func (person *Person) Move(Address string) string {
 	oldAddress := person.Address
-	person.Address = Address;
+	person.Address = Address
 	return oldAddress
 }
 
-func main() {
+func structTest() {
 	//Person{Name: "Robert", Gender: "Male", Age: 33} 在赋值的时候我们也可以指定名称来赋值
 	p := Person{"Robert", "Male", 33, "Beijing"}
 	//这里我们创建了一个匿名的结构体

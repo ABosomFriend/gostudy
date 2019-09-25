@@ -3,25 +3,25 @@ package main
 import "fmt"
 
 type MyInt struct {
-    n int
+	n int
 }
 
 type Pet interface {
-    Name() string
+	Name() string
 	Age() uint8
 }
 
 type Dog struct {
 	FName string
-	FAge uint64
+	FAge  uint64
 }
 
 func (dog Dog) Name() string {
-  return ""
+	return ""
 }
 
 func (dog Dog) Age() uint8 {
-  return 1
+	return 1
 }
 
 //这里的方法接收者是一个指针类型,说明这个方法是属于*MyInt的.
@@ -40,7 +40,7 @@ func (myInt MyInt) Decrease() {
 相关规则:
 1.一个指针类型拥有以它以及以它的基底类型为接收者类型的所有方法，而它的基底类型却只拥有以它本身为接收者类型的方法。
 */
-func main() {
+func pointTest() {
 	/*另外，还有一点需要大家注意，我们在基底类型的值上仍然可以调用它的指针方法。
 	例如，若我们有一个Person类型的变量bp，则调用表达式bp.Grow()是合法的。这是因为，
 	如果Go语言发现我们调用的Grow方法是bp的指针方法，那么它会把该调用表达式视为(&bp).Grow()。

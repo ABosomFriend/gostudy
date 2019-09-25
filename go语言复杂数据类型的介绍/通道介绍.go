@@ -25,7 +25,7 @@ type Receiver <-chan int
 相比之下，我们之前介绍的那些数据类型都不是并发安全的*/
 
 //顺便说一句，实际上make函数也可以被用来初始化切片类型或字典类型的值。
-func main() {
+func channelTest() {
 	//var ch2 chan string = make(chan string, 5)
 	ch2 := make(chan string, 5)
 	// 下面就是传说中的通过启用一个Goroutine来并发的执行代码块的方法。
@@ -49,9 +49,8 @@ func main() {
 	//不能多次关闭通道,多次关闭通道要抛出运行时异常
 	// close(ch2)
 
-
 	//当我们把缓冲区设置为0的时候,这个时候通道就没有缓存.发送数据时会直接阻塞,知道接收者取出数据为止
-	var myChannel = make(chan int,0)
+	var myChannel = make(chan int, 0)
 	var number = 6
 	go func() {
 		var sender Sender = myChannel

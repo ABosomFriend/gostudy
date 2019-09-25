@@ -32,7 +32,7 @@ func appendSn(firstPart string, sn uint32) string {
 	return firstPart + "-" + strconv.FormatUint(uint64(sn), 10)
 }
 
-func main() {
+func funcTest() {
 	var generator EmployeeIdGenerator
 	/*注意，函数generator是函数类型EmployeeIdGenerator的一个实现。实际上，
 	只要一个函数的参数声明列表和结果声明列表中的数据类型的顺序和名称与某一个函数类型完全一致，前者就是后者的一个实现*/

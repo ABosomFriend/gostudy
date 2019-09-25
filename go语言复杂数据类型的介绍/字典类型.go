@@ -6,7 +6,7 @@ import (
 
 //注意:由于字符串类型的空值为"",为空字符串
 
-func main() {
+func dict() {
 	//字典类型的key的类型必须是可比较的
 	mm2 := map[string]int{"golang": 42, "java": 1, "python": 0, "scala": 25, "erlang": 50, "test": 0}
 	fmt.Println(mm2)
