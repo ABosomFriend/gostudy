@@ -10,16 +10,16 @@ import (
 适时的从队列中取出待运行的Goroutine并执行相应的函数调用操作。注意，对传递给这里的函数
 的那些参数的求值会在go语句被执行时进行。这一点也是与defer语句类似的。*/
 
-func main() {
+func testSync() {
 	/*
-	sync.WaitGroup类型有三个方法可用——Add、Done和Wait。Add会使其所属值的一个内置整数得到相应增加，
-	Done会使那个整数减1，而Wait方法会使当前Goroutine（这里是运行main函数的那个Goroutine）阻塞直到
-	那个整数为0。这下你应该明白上面这个示例所采用的方法了。我们在main函数中启用了三个Goroutine来封装
-	三个go函数。每个匿名函数的最后都调用了wg.Done方法，并以此表达当前的go函数会立即执行结束的情况。
-	当这三个go函数都调用过wg.Done函数之后，处于main函数最后的那条wg.Wait()语句的阻塞作用将会消失，
-	main函数的执行将立即结束。
+		sync.WaitGroup类型有三个方法可用——Add、Done和Wait。Add会使其所属值的一个内置整数得到相应增加，
+		Done会使那个整数减1，而Wait方法会使当前Goroutine（这里是运行main函数的那个Goroutine）阻塞直到
+		那个整数为0。这下你应该明白上面这个示例所采用的方法了。我们在main函数中启用了三个Goroutine来封装
+		三个go函数。每个匿名函数的最后都调用了wg.Done方法，并以此表达当前的go函数会立即执行结束的情况。
+		当这三个go函数都调用过wg.Done函数之后，处于main函数最后的那条wg.Wait()语句的阻塞作用将会消失，
+		main函数的执行将立即结束。
 	*/
-	var wg,wg1,wg2 sync.WaitGroup
+	var wg, wg1, wg2 sync.WaitGroup
 	wg.Add(1)
 	wg1.Add(1)
 	wg2.Add(1)
